@@ -1,0 +1,11 @@
+body {
+  background-image: linear-gradient(to right, rgb(78, 78, 146), rgb(126, 187, 126));
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+}/*# sourceMappingURL=styles.css.map */

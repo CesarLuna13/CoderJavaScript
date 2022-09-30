@@ -1,0 +1,3 @@
+body{
+    background-image: linear-gradient(to right, map-get($map: $colors, $key: background-primary) , map-get($map: $colors, $key: background-secondary));
+}
