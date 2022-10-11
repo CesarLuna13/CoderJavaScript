@@ -2,6 +2,11 @@ body {
   background-image: linear-gradient(to right, rgb(78, 78, 146), rgb(126, 187, 126));
 }
 
+.mainIndex {
+  height: 65vh;
+  margin-top: 25vh;
+}
+
 * {
   margin: 0;
   padding: 0;

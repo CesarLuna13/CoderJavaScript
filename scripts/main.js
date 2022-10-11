@@ -5,34 +5,32 @@ console.log(ejemploPrompt);
 alert("Ejemplo de alerta");
 */
 
-function registroUsuario(){
-    let nombre = prompt("Ingrese su nombre");
-    if(nombre === null){
-        return "Evento cancelado"
-    }
-    while(nombre === ""){
-        nombre = prompt("No válido, ingrese su nombre");
-    }
 
-    let apellido =  prompt("Ingrese su apellido");
-    if(apellido === null){
-        return "Evento cancelado"
-    }
-    while(apellido === ""){
-        apellido = prompt("No válido, ingrese su apellido");
-    }
 
-    let username = prompt("Ingrese su nombre de usuario");
 
-    if(username === null){
-        return "Evento cancelado"
-    }
-    while(username === ""){
-        username = "No válido, ingrese su nombre de usuario"
-    }
 
-    return nombre + " " + apellido +  " " + username
+//Clase para usuarios en el sistema 
+class User{
+    constructor(username, password){
+        this.username = username;
+        this.password = password;
+    }
 }
+
+const testUser = new User("test" , "pass");
+
+
+//Array de usuarios
+const users = [testUser];
+
+
+function crearUsuario(username, password){
+    const usuario = new User(username, password);
+    return usuario;
+}
+
+
+
 
 
 
@@ -48,6 +46,8 @@ function arrays(){
     //Métodos
     arrayC.push("D"); //Agrega elemento en la última posición del array
     arrayC.unshift("a"); //Agrega elemento en la primera posición
-    
+    let elemtoQuitado = arrayC.pop()//Elimina el último elemento
+    arrayC.shift() //eliminan el último elemento
+
 
 }
