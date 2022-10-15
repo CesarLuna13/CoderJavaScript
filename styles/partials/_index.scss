@@ -1,6 +1,22 @@
-body{
-    background-image: linear-gradient(to right, map-get($map: $colors, $key: background-primary) , map-get($map: $colors, $key: background-secondary));
+.bodyIndex{
+    background-image: linear-gradient(rgba(0,0,0,0), rgba(0, 0, 0, 0.479)), url("../images/instrumental.jpg");  
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Open Sans', sans-serif;
 }
+
+
+.headerIndex{
+    height: 10vh;
+
+    h1{
+        padding-left: 50vh;
+        padding-top: 15vh;
+    }
+}
+
 
 .mainIndex{
     height: 65vh;

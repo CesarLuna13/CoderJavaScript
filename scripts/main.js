@@ -1,35 +1,73 @@
-/*let ejemplo = "Ejemplo de variable";
-const ejemploConst = "Ejemplo de constante";
-let ejemploPrompt = prompt("Ejemplo de ingreso de datos con prompt");
-console.log(ejemploPrompt);
-alert("Ejemplo de alerta");
-*/
-
-
-
-
-
 //Clase para usuarios en el sistema 
 class User{
-    constructor(username, password){
+    constructor(username, password, userid){
         this.username = username;
         this.password = password;
+        this.userid = userid;
     }
 }
 
-const testUser = new User("test" , "pass");
+
+//Clase para pacientes del sistema
+class Paciente{
+    constructor(nombre, edad, genero, alergias, enfermedadSistemica, telefono, correo){
+        this.nombre = nombre;
+        this.edad = edad;
+        this.genero = genero;
+        this.alergias =alergias;
+        this.enfermedadSistemica = enfermedadSistemica;
+        this.telefono = telefono;
+        this.correo = correo;
+    }
+}
+
+
+//Objeto para testing
+const testUser = new User("test" , "pass", "1");
+const testPaciente = new Paciente("testPaciente", "23", "M", "Ninguna", "Ninguna", "123456789", "correo@correo.com");
+
 
 
 //Array de usuarios
 const users = [testUser];
 
 
+//Función para agregar usuario al sistema
 function crearUsuario(username, password){
     const usuario = new User(username, password);
-    return usuario;
+    //return usuario;
+    users.push(usuario); //Agrega el nuevo usuario al array de users
 }
 
 
+//
+
+//Evento para hacer login
+const btnEnter = document.querySelector("button.buttonEnter");
+btnEnter.addEventListener("click", ()=>{
+    console.log("Click en boton enter");
+})
+
+
+//Evento para agregar usuario nuevo
+const btnAgregarUsuario = document.querySelector("button.buttonNewUser");
+btnAgregarUsuario.addEventListener("click", ()=>{
+    console.log("Click en agregar usuario");
+})
+
+
+
+
+
+
+
+
+
+
+//Notas
+//----------------------------------------------------------------------------------------------------------------------------
+
+//Ejemplo de evento
 
 
 
