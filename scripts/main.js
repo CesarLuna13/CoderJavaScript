@@ -7,24 +7,9 @@ class User{
     }
 }
 
-
-//Clase para pacientes del sistema
-class Paciente{
-    constructor(nombre, edad, genero, alergias, enfermedadSistemica, telefono, correo){
-        this.nombre = nombre;
-        this.edad = edad;
-        this.genero = genero;
-        this.alergias =alergias;
-        this.enfermedadSistemica = enfermedadSistemica;
-        this.telefono = telefono;
-        this.correo = correo;
-    }
-}
-
-
 //Objeto para testing
 const testUser = new User("test" , "pass", "1");
-const testPaciente = new Paciente("testPaciente", "23", "M", "Ninguna", "Ninguna", "123456789", "correo@correo.com");
+
 
 
 
@@ -45,7 +30,28 @@ function crearUsuario(username, password){
 //Evento para hacer login
 const btnEnter = document.querySelector("button.buttonEnter");
 btnEnter.addEventListener("click", ()=>{
-    console.log("Click en boton enter");
+
+
+    const inputUsername = document.querySelector("#inputUsername");
+    const inputPassword = document.querySelector("#inputPassword");
+
+    const userValidation = users.find((user) => user.username === inputUsername.value);
+    const passValidation = users.find((pass) => pass.password === inputPassword.value);
+
+    if(userValidation !== undefined && passValidation !== undefined){
+        document.querySelector('.bodyIndex').remove();
+        sessionStorage.setItem('user', inputUsername.value)
+        home();
+    }else{
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Usuario o contraseña incorrectos',
+        })
+    }
+
+    
+
 })
 
 
@@ -53,8 +59,13 @@ btnEnter.addEventListener("click", ()=>{
 const btnAgregarUsuario = document.querySelector("button.buttonNewUser");
 btnAgregarUsuario.addEventListener("click", ()=>{
     console.log("Click en agregar usuario");
+    crearUsuario()
 })
 
+
+function crearUsuario(){
+    document.querySelector('.bodyIndex').remove();
+}
 
 
 
