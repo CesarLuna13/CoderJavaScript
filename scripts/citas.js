@@ -9,3 +9,12 @@ class Citas{
         console.log("Agendar cita");
     }
 }
+
+function mostrarCitas(){
+    console.log("Funcion para mostrar citas");
+} 
+
+
+function agendarCitas(){
+    console.log("Función para agendar citas");
+}

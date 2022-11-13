@@ -1,6 +1,7 @@
 //Clase para pacientes del sistema
 class Paciente{
-    constructor(nombre, edad, genero, alergias, enfermedadSistemica, telefono, correo){
+    constructor(id, nombre, edad, genero, alergias, enfermedadSistemica, telefono, correo){
+        this.id = id;
         this.nombre = nombre;
         this.edad = edad;
         this.genero = genero;
@@ -10,6 +11,7 @@ class Paciente{
         this.correo = correo;
     }
 
+
     agregarPaciente(){
         console.log("Agregar paciente")
     }
@@ -17,4 +19,25 @@ class Paciente{
 
 
 
-const testPaciente = new Paciente("testPaciente", "23", "M", "Ninguna", "Ninguna", "123456789", "correo@correo.com");
+const testPaciente = new Paciente("01", "testPaciente", "23", "M", "Ninguna", "Ninguna", "123456789", "correo@correo.com");
+
+//const pacienteJSON = JSON.stringify(testPaciente);
+//Arreglos de pacientes
+const listPacientes = [testPaciente];
+
+const almacenPacientes = (clave, valor) => { localStorage.setItem(clave, valor)};
+almacenPacientes("Pacientes", JSON.stringify(listPacientes));
+
+
+
+function mostrarPacientes(){
+    console.log("Funcion mostrar pacientes");
+}
+
+function agregarPacientes(){
+    console.log("Funcion para agregar pacientes");
+}
+
+
+
+
