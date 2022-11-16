@@ -1,6 +1,3 @@
-let addPaciente = [];
-
-
 
 //Clase para pacientes del sistema
 class Paciente{
@@ -16,6 +13,7 @@ class Paciente{
     }
 
 }
+const listPacientes = [];
 
 
 function agregarPaciente(no, ed, ge, al, en, te, co){
@@ -29,19 +27,12 @@ function agregarPaciente(no, ed, ge, al, en, te, co){
 }
 
 
-const testPaciente = new Paciente("1", "testPaciente", "23", "M", "Ninguna", "Ninguna", "123456789", "correo@correo.com");
-
-//const pacienteJSON = JSON.stringify(testPaciente);
-//Arreglos de pacientes
-const listPacientes = [testPaciente];
-
-const almacenPacientes = (clave, valor) => { localStorage.setItem(clave, valor)};
-almacenPacientes("Pacientes", JSON.stringify(listPacientes));
-
 
 
 function mostrarPacientes(){
     console.log("Funcion mostrar pacientes");
+    const obtenerPacientes = localStorage.getItem('Pacientes')
+    console.log(obtenerPacientes)
 }
 
 function agregarPacientes(){
@@ -59,7 +50,7 @@ function agregarPacientes(){
             <button type="button" id="btnAgregarPaciente" class="btn btn-primary">Agregar Paciente</button>
             <button type="button" id="btnAgendarCita" class="btn btn-primary">Agendar Cita</button>
         </div>
-        </div>
+    </div>
 
     <div id="index" class="row h-100 justify-content-md-center ">
         <div class="col-5">
