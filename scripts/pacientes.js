@@ -30,9 +30,24 @@ function agregarPaciente(no, ed, ge, al, en, te, co){
 
 
 function mostrarPacientes(){
-    console.log("Funcion mostrar pacientes");
-    const obtenerPacientes = localStorage.getItem('Pacientes')
-    console.log(obtenerPacientes)
+    const obtenerPacientes = JSON.parse(localStorage.getItem('Pacientes'));
+    console.log(typeof obtenerPacientes);
+
+}
+
+function tablePacientes(){
+    return `
+        <tr>
+            <td> $(Paciente.id) </td>
+            <td> $(Paciente.nombre) </td>
+            <td> $(Paciente.edad) </td>
+            <td> $(Paciente.genero) </td>
+            <td> $(Paciente.alergias) </td>
+            <td> $(Paciente.enfermedadSistemica) </td>
+            <td> $(Paciente.telefono) </td>
+            <td> $(Paciente.correo) </td>
+        </tr>
+    `
 }
 
 function agregarPacientes(){
