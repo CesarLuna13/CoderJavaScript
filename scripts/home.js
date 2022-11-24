@@ -1,7 +1,9 @@
 
+let bodyGeneral = document.querySelector(".BodyGeneral");
+
 function home(){
     user = sessionStorage.getItem('user');
-    let welcomeMessage = document.createElement("section");
+    var welcomeMessage = document.createElement("section");
     welcomeMessage.setAttribute('class', 'bodyHome');
     welcomeMessage.innerHTML = `<div class="d-flex flex-row justify-content-around">
     <div><h1 id="welcome">Bienvenido ${user}</h1></div>

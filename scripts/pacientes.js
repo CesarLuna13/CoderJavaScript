@@ -30,6 +30,7 @@ function agregarPaciente(no, ed, ge, al, en, te, co){
 
 
 function mostrarPacientes(){
+<<<<<<< HEAD
     const obtenerPacientes = JSON.parse(localStorage.getItem('Pacientes'));
     console.log(typeof obtenerPacientes);
 
@@ -48,10 +49,37 @@ function tablePacientes(){
             <td> $(Paciente.correo) </td>
         </tr>
     `
+=======
+    welcomeMessage = "";
+    let tablaPacientes = document.createElement("table");
+    tablaPacientes.setAttribute('class', 'tablePacientes');
+    tablaPacientes.innerHTML= " ";
+    document.body.append(tablaPacientes);
+    const obtenerPacientes = JSON.parse(localStorage.getItem('Pacientes'));
+    
+    if(obtenerPacientes.length > 0){
+        obtenerPacientes.forEach(paciente => tablaPacientes.innerHTML += tablePacientes(paciente));
+        document.body.append(tablaPacientes);
+    }
+    
+}
+
+function tablePacientes(paciente){
+    return `<tr>
+                <td>${paciente.id}</td>
+                <td>${paciente.nombre}</td>
+                <td>${paciente.edad}</td>
+                <td>${paciente.genero}</td>
+                <td>${paciente.alergias}</td>
+                <td>${paciente.enfermedadSistemica}</td>
+                <td>${paciente.telefono}</td>
+                <td>${paciente.correo}</td>
+        </tr>`
+>>>>>>> Final
 }
 
 function agregarPacientes(){
-    document.querySelector('.bodyHome').remove();
+    bodyGeneral.innerHTML = " ";
     console.log("Funcion para agregar pacientes");
     let formPacient = document.createElement("section");
     formPacient.setAttribute('class', 'bodyHome');
