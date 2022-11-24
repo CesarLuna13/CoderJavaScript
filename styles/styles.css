@@ -21,6 +21,11 @@
   margin-top: 25vh;
 }
 
+td {
+  padding: 10px;
+  border: solid black;
+}
+
 * {
   margin: 0;
   padding: 0;

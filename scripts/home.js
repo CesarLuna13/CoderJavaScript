@@ -1,4 +1,6 @@
 
+let bodyGeneral = document.querySelector(".BodyGeneral");
+
 function home(){
     user = sessionStorage.getItem('user');
     let welcomeMessage = document.createElement("section");
