@@ -6,7 +6,7 @@ class Paciente{
         this.nombre = nombre;
         this.edad = edad;
         this.genero = genero;
-        this.alergias =alergias;
+        this.alergias = alergias;
         this.enfermedadSistemica = enfermedadSistemica;
         this.telefono = telefono;
         this.correo = correo;
@@ -21,6 +21,7 @@ function agregarPaciente(no, ed, ge, al, en, te, co){
     const valID = (listPacientes.length + 1).toString();
     const newPaciente = new Paciente(valID, no, ed, ge, al, en, te, co);
     listPacientes.push(newPaciente);
+    console.log(listPacientes);
     const almacenPacientes = (clave, valor) => { localStorage.setItem(clave, valor)};
     almacenPacientes("Pacientes", JSON.stringify(listPacientes));
 
@@ -30,8 +31,8 @@ function agregarPaciente(no, ed, ge, al, en, te, co){
 
 
 function mostrarPacientes(){
+    //bodyGeneral.innerHTML = " ";
     console.log("Funcion mostrar pacientes");
-    //welcomeMessage = "";
     let tablaPacientes = document.createElement("table");
     tablaPacientes.setAttribute('class', 'tablesPacientes');
     tablaPacientes.innerHTML= " ";
@@ -44,7 +45,6 @@ function mostrarPacientes(){
         document.body.append(tablaPacientes);
     }
 }
-
 
 
 function tablePacientes(Paciente){
@@ -70,22 +70,12 @@ function tablePacientes(Paciente){
 
 
 function agregarPacientes(){
-    bodyGeneral.innerHTML = " ";
+    //mainSection.innerHTML = " ";
+    //document.body.append(mainSection);
     console.log("Funcion para agregar pacientes");
     let formPacient = document.createElement("section");
-    formPacient.setAttribute('class', 'bodyHome');
+    formPacient.setAttribute('class', 'MainSection');
     formPacient.innerHTML = `
-    <div class="d-flex flex-row justify-content-around">
-        <div><h1 id="welcome">Bienvenido ${user}</h1></div>
-        <div>
-            <button type="button" id="home" class="btn btn-primary">Home</button>
-            <button type="button" id="pacientes" class="btn btn-primary">Pacientes</button>
-            <button type="button" id="citas" class="btn btn-primary">Citas</button>
-            <button type="button" id="btnAgregarPaciente" class="btn btn-primary">Agregar Paciente</button>
-            <button type="button" id="btnAgendarCita" class="btn btn-primary">Agendar Cita</button>
-        </div>
-    </div>
-
     <div id="index" class="row h-100 justify-content-md-center ">
         <div class="col-5">
             <form>
@@ -137,7 +127,7 @@ function agregarPacientes(){
         const correo = document.querySelector("#Correo");
         const nuevoPaciente = [nombre.value, edad.value, genero.value, alergias.value, eSistemicas.value, telefono.value, correo.value];
 
-        addPaciente = nuevoPaciente;
+        //addPaciente = nuevoPaciente;
 
         agregarPaciente(nombre.value, edad.value, genero.value, alergias.value, eSistemicas.value, telefono.value, correo.value);
 
@@ -148,7 +138,10 @@ function agregarPacientes(){
             showConfirmButton: false,
             timer: 1500
         })
-        agregarPacientes();
+
+        setTimeout(() => {
+            home();
+        },1500);
     })
 
 

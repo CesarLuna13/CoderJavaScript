@@ -1,3 +1,6 @@
+let BodyIndex = document.querySelector(".bodyIndex");
+
+
 //Clase para usuarios en el sistema 
 class User{
     constructor(username, password, userid){
@@ -39,7 +42,8 @@ btnEnter.addEventListener("click", ()=>{
     const passValidation = users.find((pass) => pass.password === inputPassword.value);
 
     if(userValidation !== undefined && passValidation !== undefined){
-        document.querySelector('.bodyIndex').remove();
+        //document.querySelector('.bodyIndex').remove();
+        BodyIndex.innerHTML = " ";
         sessionStorage.setItem('user', inputUsername.value)
         home();
     }else{

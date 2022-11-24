@@ -28,20 +28,12 @@ function nuevaCita(a, b){
 }
 
 function agendarCitas(){
-    document.querySelector('.bodyHome').remove();
+    console.log("Agendar citas");
+    //bodyGeneral.innerHTML = " ";
     let formCita = document.createElement("section");
     formCita.setAttribute('class', 'bodyHome');
     formCita.innerHTML = `
-    <div class="d-flex flex-row justify-content-around">
-        <div><h1 id="welcome">Bienvenido ${user}</h1></div>
-        <div>
-            <button type="button" id="home" class="btn btn-primary">Home</button>
-            <button type="button" id="pacientes" class="btn btn-primary">Pacientes</button>
-            <button type="button" id="citas" class="btn btn-primary">Citas</button>
-            <button type="button" id="btnAgregarPaciente" class="btn btn-primary">Agregar Paciente</button>
-            <button type="button" id="btnAgendarCita" class="btn btn-primary">Agendar Cita</button>
-        </div>
-    </div>
+
 
     <div id="index" class="row h-100 justify-content-md-center ">
         <div class="col-5">
@@ -76,7 +68,10 @@ function agendarCitas(){
             showConfirmButton: false,
             timer: 1500
         })
-        agendarCitas();
+        setTimeout(() => {
+            agendarCitas();
+        },1500);
+        
 
 
     })

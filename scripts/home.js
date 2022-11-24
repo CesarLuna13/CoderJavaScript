@@ -1,7 +1,14 @@
 
 let bodyGeneral = document.querySelector(".BodyGeneral");
 
+
+
+
+
+
 function home(){
+    console.log("Home");
+    bodyGeneral.innerHTML = " ";
     user = sessionStorage.getItem('user');
     var welcomeMessage = document.createElement("section");
     welcomeMessage.setAttribute('class', 'bodyHome');
@@ -17,42 +24,50 @@ function home(){
 </div>`;
     document.body.append(welcomeMessage);
 
+    var mainSection = document.createElement("section")
+    mainSection.setAttribute('class', 'sectionGeneral');
+    mainSection.innerHTML = " ";
+    document.body.append(mainSection);
+    var MainSection = document.querySelector(".sectionGeneral");
 
-    //Recuperación de pacientes del local storage
-    let recuperacionPacientes = JSON.stringify(localStorage.getItem('Pacientes'));
 
 
     //Evento para Home
-    const btnHome = document.querySelector("#home");
+    var btnHome = document.querySelector("#home");
     btnHome.addEventListener("click", ()=>{
         home();
     })
 
 
     //Evento para Pacientes
-    const btnPacientes =  document.querySelector("#pacientes");
+    var btnPacientes =  document.querySelector("#pacientes");
     btnPacientes.addEventListener("click", ()=>{
         //console.log(JSON.parse(recuperacionPacientes));
+        home();
         mostrarPacientes();
     })
 
     //Evento para citas
-    const btnCitas = document.querySelector("#citas");
+    var btnCitas = document.querySelector("#citas");
     btnCitas.addEventListener("click", ()=>{
+        home();
         mostrarCitas();
     })
 
     //Evento para agregar Paciente
-    const btnAgregarPaciente = document.querySelector("#btnAgregarPaciente");
+    var btnAgregarPaciente = document.querySelector("#btnAgregarPaciente");
     btnAgregarPaciente.addEventListener("click", ()=>{
+        home();
         agregarPacientes();
     })
 
     //Evento para agregar cita
-    const btnAgendarCita = document.querySelector("#btnAgendarCita");
+    var btnAgendarCita = document.querySelector("#btnAgendarCita");
     btnAgendarCita.addEventListener("click", ()=>{
+        home();
         agendarCitas();
     })
+    
 
 
 }
