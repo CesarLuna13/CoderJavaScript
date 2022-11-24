@@ -30,53 +30,44 @@ function agregarPaciente(no, ed, ge, al, en, te, co){
 
 
 function mostrarPacientes(){
-<<<<<<< HEAD
-    const obtenerPacientes = JSON.parse(localStorage.getItem('Pacientes'));
-    console.log(typeof obtenerPacientes);
-
-}
-
-function tablePacientes(){
-    return `
-        <tr>
-            <td> $(Paciente.id) </td>
-            <td> $(Paciente.nombre) </td>
-            <td> $(Paciente.edad) </td>
-            <td> $(Paciente.genero) </td>
-            <td> $(Paciente.alergias) </td>
-            <td> $(Paciente.enfermedadSistemica) </td>
-            <td> $(Paciente.telefono) </td>
-            <td> $(Paciente.correo) </td>
-        </tr>
-    `
-=======
-    welcomeMessage = "";
+    console.log("Funcion mostrar pacientes");
+    //welcomeMessage = "";
     let tablaPacientes = document.createElement("table");
-    tablaPacientes.setAttribute('class', 'tablePacientes');
+    tablaPacientes.setAttribute('class', 'tablesPacientes');
     tablaPacientes.innerHTML= " ";
     document.body.append(tablaPacientes);
     const obtenerPacientes = JSON.parse(localStorage.getItem('Pacientes'));
+    console.log(obtenerPacientes);
     
     if(obtenerPacientes.length > 0){
         obtenerPacientes.forEach(paciente => tablaPacientes.innerHTML += tablePacientes(paciente));
         document.body.append(tablaPacientes);
     }
-    
 }
 
-function tablePacientes(paciente){
-    return `<tr>
-                <td>${paciente.id}</td>
-                <td>${paciente.nombre}</td>
-                <td>${paciente.edad}</td>
-                <td>${paciente.genero}</td>
-                <td>${paciente.alergias}</td>
-                <td>${paciente.enfermedadSistemica}</td>
-                <td>${paciente.telefono}</td>
-                <td>${paciente.correo}</td>
-        </tr>`
->>>>>>> Final
+
+
+function tablePacientes(Paciente){
+
+    return `
+        <tr>
+            <td> ${Paciente.id} </td>
+            <td> ${Paciente.nombre} </td>
+            <td> ${Paciente.edad} </td>
+            <td> ${Paciente.genero} </td>
+            <td> ${Paciente.alergias} </td>
+            <td> ${Paciente.enfermedadSistemica} </td>
+            <td> ${Paciente.telefono} </td>
+            <td> ${Paciente.correo} </td>
+        </tr>
+    `
 }
+
+    
+
+
+
+
 
 function agregarPacientes(){
     bodyGeneral.innerHTML = " ";
