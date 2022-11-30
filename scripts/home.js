@@ -2,12 +2,28 @@
 let bodyGeneral = document.querySelector(".BodyGeneral");
 
 
+const url = 'https://pokeapi.co/api/v2/pokemon/1/'
+
+function aplicacionFetch(){
+    fetch(url)
+    .then(response => response.json())
+    .then(data =>{
+        let apifetch = document.createElement("section");
+        apifetch.innerHTML = `
+        <p>${data.name}</p>
+        <p>${data.order}</p>
+        `;
+        document.body.append(apifetch)
+        
+    })
+    .catch(err => console.log(err))
+}
+    
 
 
 
 
 function home(){
-    console.log("Home");
     bodyGeneral.innerHTML = " ";
     user = sessionStorage.getItem('user');
     var welcomeMessage = document.createElement("section");
@@ -29,6 +45,8 @@ function home(){
     mainSection.innerHTML = " ";
     document.body.append(mainSection);
     var MainSection = document.querySelector(".sectionGeneral");
+
+    
 
 
 

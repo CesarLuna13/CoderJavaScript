@@ -13,9 +13,7 @@ class Citas{
 const listCitas = [];
 
 function mostrarCitas(){
-    console.log("Funcion para mostrar citas");
     const obtenerCitas = localStorage.getItem('Citas');
-    console.log(obtenerCitas);
 } 
 
 
@@ -28,8 +26,6 @@ function nuevaCita(a, b){
 }
 
 function agendarCitas(){
-    console.log("Agendar citas");
-    //bodyGeneral.innerHTML = " ";
     let formCita = document.createElement("section");
     formCita.setAttribute('class', 'bodyHome');
     formCita.innerHTML = `
@@ -43,8 +39,8 @@ function agendarCitas(){
                     <input type="text" class="Username form-control" id="Paciente">
                 </div>
                 <div>
-                    <input type="date" class="form-check-input">
                     <label id="Fecha" class="form-check-label" for="exampleCheck1">Fecha</label>
+                    <input type="datetime-local">
                 </div>
                 <button type="button" id="agendarCita" class="btn btn-primary buttonEnter">Agendar</button>
             </form>
@@ -57,7 +53,6 @@ function agendarCitas(){
     btnAgendarCita.addEventListener("click", () => {
         const paciente = document.querySelector("#Paciente");
         const fecha = document.querySelector("#Fecha");
-        console.log(fecha.value)
 
         nuevaCita(paciente.value, fecha.value);
 

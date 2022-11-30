@@ -17,11 +17,9 @@ const listPacientes = [];
 
 
 function agregarPaciente(no, ed, ge, al, en, te, co){
-    console.log("Agregar paciente")
     const valID = (listPacientes.length + 1).toString();
     const newPaciente = new Paciente(valID, no, ed, ge, al, en, te, co);
     listPacientes.push(newPaciente);
-    console.log(listPacientes);
     const almacenPacientes = (clave, valor) => { localStorage.setItem(clave, valor)};
     almacenPacientes("Pacientes", JSON.stringify(listPacientes));
 
@@ -31,14 +29,11 @@ function agregarPaciente(no, ed, ge, al, en, te, co){
 
 
 function mostrarPacientes(){
-    //bodyGeneral.innerHTML = " ";
-    console.log("Funcion mostrar pacientes");
     let tablaPacientes = document.createElement("table");
     tablaPacientes.setAttribute('class', 'tablesPacientes');
     tablaPacientes.innerHTML= " ";
     document.body.append(tablaPacientes);
     const obtenerPacientes = JSON.parse(localStorage.getItem('Pacientes'));
-    console.log(obtenerPacientes);
     
     if(obtenerPacientes.length > 0){
         obtenerPacientes.forEach(paciente => tablaPacientes.innerHTML += tablePacientes(paciente));
@@ -66,13 +61,7 @@ function tablePacientes(Paciente){
     
 
 
-
-
-
 function agregarPacientes(){
-    //mainSection.innerHTML = " ";
-    //document.body.append(mainSection);
-    console.log("Funcion para agregar pacientes");
     let formPacient = document.createElement("section");
     formPacient.setAttribute('class', 'MainSection');
     formPacient.innerHTML = `
@@ -117,7 +106,6 @@ function agregarPacientes(){
     const btnNuevoPaciente = document.querySelector("#agregarPaciente");
     
     btnNuevoPaciente.addEventListener("click", () => {
-        console.log(btnNuevoPaciente);
         const nombre = document.querySelector("#Nombre");
         const edad = document.querySelector("#Edad");
         const genero = document.querySelector("#Genero");
@@ -127,7 +115,6 @@ function agregarPacientes(){
         const correo = document.querySelector("#Correo");
         const nuevoPaciente = [nombre.value, edad.value, genero.value, alergias.value, eSistemicas.value, telefono.value, correo.value];
 
-        //addPaciente = nuevoPaciente;
 
         agregarPaciente(nombre.value, edad.value, genero.value, alergias.value, eSistemicas.value, telefono.value, correo.value);
 

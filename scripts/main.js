@@ -23,7 +23,6 @@ const users = [testUser];
 //Función para agregar usuario al sistema
 function crearUsuario(username, password){
     const usuario = new User(username, password);
-    //return usuario;
     users.push(usuario); //Agrega el nuevo usuario al array de users
 }
 
@@ -42,7 +41,6 @@ btnEnter.addEventListener("click", ()=>{
     const passValidation = users.find((pass) => pass.password === inputPassword.value);
 
     if(userValidation !== undefined && passValidation !== undefined){
-        //document.querySelector('.bodyIndex').remove();
         BodyIndex.innerHTML = " ";
         sessionStorage.setItem('user', inputUsername.value)
         home();
@@ -62,45 +60,10 @@ btnEnter.addEventListener("click", ()=>{
 //Evento para agregar usuario nuevo
 const btnAgregarUsuario = document.querySelector("button.buttonNewUser");
 btnAgregarUsuario.addEventListener("click", ()=>{
-    console.log("Click en agregar usuario");
     crearUsuario()
 })
 
 
 function crearUsuario(){
     document.querySelector('.bodyIndex').remove();
-}
-
-
-
-
-
-
-
-
-
-//Notas
-//----------------------------------------------------------------------------------------------------------------------------
-
-//Ejemplo de evento
-
-
-
-
-// Arrays
-function arrays(){
-    const arrayA = []; //array vacio, priorizar creearlos con const, por seguridad
-    let arrayB = [1, 2];
-    const arrayC = ["A", "B", "C"];
-    const arrayD = [true, false, true];
-    const arrayE = [1, false, "C"]; // No muy común
-    console.table(arrayC); //Es mejor cuando se quieren ver los elementos de un array
-
-    //Métodos
-    arrayC.push("D"); //Agrega elemento en la última posición del array
-    arrayC.unshift("a"); //Agrega elemento en la primera posición
-    let elemtoQuitado = arrayC.pop()//Elimina el último elemento
-    arrayC.shift() //eliminan el último elemento
-
-
 }
